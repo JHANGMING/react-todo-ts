@@ -1,8 +1,8 @@
 
 import { Routes,Route} from "react-router-dom";
 import Home from "./pages/Home";
-import LogIn from "./pages/LogIn";
-import SignIn from "./pages/SignIn";
+import LogIn from "./components/LogIn";
+import SignIn from "./components/SignIn";
 
 
 

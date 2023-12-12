@@ -1,14 +1,15 @@
 
 import { useNavigate } from "react-router-dom";
-import { LogInput } from "../../components/Input";
-import { DefaultButton } from "../../utils/btnStyles";
+import { LogInput } from "../Input";
+import { DefaultButton } from "../Button/styled";
 import { Buttons, Container, Form, Wrapper } from "./styled"
-import { getData, textData } from "./data";
+import { getButtonsData, textData } from "./data";
 
 const LogIn=()=>{
   const navigate=useNavigate()
-  const data = getData(navigate);
-  const {title,desc}=textData
+  const buttonsData = getButtonsData(navigate);
+  const {title,desc}=textData;
+  
   return(
     <Wrapper>
       <Container>
@@ -18,7 +19,7 @@ const LogIn=()=>{
           <LogInput type="email"  placeholder="Email"/>
           <LogInput type="password" placeholder="Password"/>
           <Buttons>
-            {data.buttons.map((button) => (
+            {buttonsData.buttons.map((button) => (
               <DefaultButton
                 key={button.text}
                 type={button.type}

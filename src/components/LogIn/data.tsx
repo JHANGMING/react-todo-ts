@@ -1,21 +1,30 @@
+import React from 'react';
 import { NavigateFunction } from 'react-router-dom';
 
 type ButtonConfig = {
   type: "submit" | "button";
   text: string;
   theme: "login" | "register"; 
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
 type DataConfig = {
   buttons: ButtonConfig[];
 };
-export const getData = (navigate: NavigateFunction):DataConfig => ({
+
+const loginHandler=(e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
+  e.preventDefault();
+  console.log(e.target);
+  
+}
+
+export const getButtonsData = (navigate: NavigateFunction):DataConfig => ({
   buttons: [
     {
       type: "submit",
       text: "Log In",
       theme: "login",
+      onClick: loginHandler,
     },
     {
       type: "button",
