@@ -1,35 +1,44 @@
-import { Label, LoginInput, SignupInput } from "./styled"
+import React from "react";
+import { ErrorLoginMsg, Errormsg, Label, LoginInput, SignupInput } from "./styled"
+import { UseFormRegister,FieldErrors,RegisterOptions} from "react-hook-form";
+import { DataObj } from "../SignIn/data";
 
-interface InputProps {
-  type: string;
-  placeholder?: string;
-  id?:string;
-  labelText?:string;
-  // register: (name: string, options?: RegisterOptions) => void;
-  // rules: RegisterOptions;
-  // errors: {
-  //   [key: string]: FieldError | undefined;
-  // };
+export interface FormValues {
+  email: string;
+  nickname:string;
+  password: string;
+  confirmPassword: string;
 }
+export type InputsConfig = {
+  id: keyof FormValues; 
+  type: "email" | "text" |"password";
+  labelText: string;
+  register?: UseFormRegister<DataObj>;
+  errors?: FieldErrors<FormValues>;
+  rules: RegisterOptions; 
+};
+export type InputsDataConfig = {
+  Inputs: InputsConfig[];
+};
 
 
-export const LogInput:React.FC<InputProps>=({type,placeholder,register,rules,errors})=>{
+
+export const LogInput:React.FC<InputsConfig>=({id,type,labelText,register,rules,errors})=>{
   return(
     <>
-    {/* <input  className="w-[293px] mb-4  h-[52px] py-4 pl-5 rounded text-m text-black tracking-wider"   {...register(type,rules)}/> */}
-    <LoginInput type={type} placeholder={placeholder} id={type}/>
-    {/* {errors[type] && <p className=" text-list-fifth mb-5 self-start ml-15">{errors[type]?.message}</p>} */}
+    <LoginInput type={type} placeholder={labelText} id={type} {...(register && register(id, rules))}/>
+    {errors && id in errors && <ErrorLoginMsg >{errors[id]?.message}</ErrorLoginMsg>}
     </>
   )
 }
 
-export const SignInput:React.FC<InputProps>=({id,type,labelText,errors,register,rules})=>{
+export const SignInput:React.FC<InputsConfig>=({id,type,labelText,errors,register,rules})=>{
+
   return(
     <>
     <Label htmlFor={id}>{labelText}</Label>
-    <SignupInput type={type} id={id} placeholder={id} />
-    {/* {errors[id] && <span className="errorSignIn">{errors[id]?.message}</span>} */}
-    {/* <SignupInput type={type} id={id} placeholder={id}  {...register(id,rules)}/> */}
+    {errors && id in errors && <Errormsg>{errors[id]?.message}</Errormsg>}
+    <SignupInput type={type} id={id} placeholder={id} {...(register && register(id, rules))}/>
     </>
   )
 }

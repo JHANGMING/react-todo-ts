@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { fifth } from "../../utils/commonStyled";
 
 export const LoginInput=styled.input`
   width: 293px;
@@ -28,4 +29,18 @@ export const SignupInput=styled.input`
   padding-left: 15px;
   margin-bottom: 9px;
   display: block;
+`;
+
+export const Errormsg=styled.span`
+  color: ${fifth};
+  font-size: 14px;
+  line-height: 14px;
+  margin-left: 9px;
+`;
+
+export const ErrorLoginMsg=styled.div`
+  color: ${fifth};
+  margin-bottom: 15px;
+  margin-left: 40px;
+  align-self: flex-start;
 `;
