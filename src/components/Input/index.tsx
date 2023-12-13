@@ -1,7 +1,6 @@
 import React from "react";
 import { ErrorLoginMsg, Errormsg, Label, LoginInput, SignupInput } from "./styled"
 import { UseFormRegister,FieldErrors,RegisterOptions} from "react-hook-form";
-import { DataObj } from "../SignIn/data";
 
 export interface FormValues {
   email: string;
@@ -9,11 +8,12 @@ export interface FormValues {
   password: string;
   confirmPassword: string;
 }
+
 export type InputsConfig = {
   id: keyof FormValues; 
   type: "email" | "text" |"password";
   labelText: string;
-  register?: UseFormRegister<DataObj>;
+  register?: UseFormRegister<FormValues>;
   errors?: FieldErrors<FormValues>;
   rules: RegisterOptions; 
 };
@@ -26,7 +26,7 @@ export type InputsDataConfig = {
 export const LogInput:React.FC<InputsConfig>=({id,type,labelText,register,rules,errors})=>{
   return(
     <>
-    <LoginInput type={type} placeholder={labelText} id={type} {...(register && register(id, rules))}/>
+    <LoginInput type={type} placeholder={labelText} id={id} {...(register && register(id, rules))}/>
     {errors && id in errors && <ErrorLoginMsg >{errors[id]?.message}</ErrorLoginMsg>}
     </>
   )

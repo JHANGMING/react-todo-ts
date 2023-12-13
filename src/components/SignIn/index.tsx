@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { SignInput } from "../Input";
+import { FormValues, SignInput } from "../Input";
 import { Buttons, Container, Form, FormContainer } from "./styled";
-import { ApiError, DataObj, getButtonsData, getInputsData, textData } from "./data";
+import { ApiError, getButtonsData, getInputsData, textData } from "./data";
 import { DefaultButton } from "../Button/styled";
 import { useForm } from "react-hook-form";
 import { Swalfire, Toastfire } from "../../utils/SweetAlert";
@@ -11,11 +11,11 @@ const SignIn=()=>{
   const navigate=useNavigate()
   const buttonsData = getButtonsData(navigate);
   const inputsData=getInputsData()
-  const {register,handleSubmit,watch,formState:{errors}}=useForm<DataObj>();
+  const {register,handleSubmit,watch,formState:{errors}}=useForm<FormValues>();
   const [apiSignUp]=useApiSignUpMutation()
   const password = watch("password");
   const {title}=textData
-  const onSubmit=async(data:DataObj)=>{
+  const onSubmit=async(data:FormValues)=>{
   const {email,password,nickname}=data
   const dataObj={
     email: email.trim(),

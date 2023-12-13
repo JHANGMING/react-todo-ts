@@ -14,22 +14,15 @@ type buttonDataConfig = {
   buttons: ButtonConfig[];
 };
 
-export interface DataObj{
-  email: string,
-  password: string,
-  nickname: string
-  }
 
 interface ErrorData {
   message: string;
   status: boolean;
 }
 
-
 export interface ApiError {
   data: ErrorData;
   status: number;
-  // 其他字段（如果有的话）
 }
 
 export const getButtonsData = (navigate: NavigateFunction):buttonDataConfig => ({
