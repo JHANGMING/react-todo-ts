@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useApiSignOutMutation } from "../../redux/api/authApi";
 import Swal from "sweetalert2";
 import { Swalfire } from "../../utils/SweetAlert";
+import { ImguserPhoto } from "../../utils/img";
 
 const TodoNav=()=>{
   const authData=useSelector((state:RootState)=>state.auth)
@@ -32,7 +33,7 @@ const TodoNav=()=>{
       <Nav/>
       <NavAside>
         <User>
-          <img src="./src/assets/brown.jpeg" alt="userPhoto"/>
+          <img src={ImguserPhoto} alt="userPhoto"/>
           <h3>{authData.nickname}</h3>
         </User>
         <Button type="button" onClick={signOut}>Log out</Button>

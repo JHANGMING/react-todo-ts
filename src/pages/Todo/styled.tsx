@@ -11,6 +11,8 @@ export const Wrapper=styled.section`
 
 export const Container=styled.div`
   max-width:1200px;
-  padding:0px 12px;
+  padding:0px 90px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 `;

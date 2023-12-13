@@ -5,7 +5,6 @@ export const authApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: `https://todolist-api.hexschool.io`,
   }),
-  tagTypes: ['Todos'],
   
   endpoints: (builder) => ({
     apiSignUp: builder.mutation({
@@ -21,7 +20,7 @@ export const authApi = createApi({
         method: 'POST',
         body: data
       }),
-      invalidatesTags: ['Todos'],
+      
     }),
     apiSignOut: builder.mutation({
       query: (token) => ({
@@ -31,7 +30,7 @@ export const authApi = createApi({
         Authorization: token, 
       },
       }),
-      invalidatesTags: ['Todos'],
+      
     }),
     apiCheckout: builder.query({
       query: (token) => ({

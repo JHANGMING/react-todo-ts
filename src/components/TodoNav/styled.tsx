@@ -4,6 +4,7 @@ export const Wrapper=styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
 `;
 
 export const NavAside=styled.div`

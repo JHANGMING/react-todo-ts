@@ -3,7 +3,8 @@ import { useApiCheckoutQuery } from "../../redux/api/authApi";
 import { Loading } from "../Loading";
 import { Navigate, Outlet } from "react-router-dom";
 import { Toastfire } from "../../utils/SweetAlert";
-import { setUserData } from "../../redux/slice/auth";
+import { setUserData } from "../../redux/slice/authSlice";
+import { useEffect } from "react";
 
 const ProtectedRoutes=()=>{
   const dispatch=useDispatch();
@@ -12,11 +13,13 @@ const ProtectedRoutes=()=>{
   .find((row) => row.startsWith("token="))
   ?.split("=")[1]);
   const {data, isLoading, isSuccess, isError}=useApiCheckoutQuery(cookieToken)
-  if (data && data.nickname) {
-    const { nickname } = data;
-    Toastfire({icon:"success",title:`歡迎 ${nickname}`})
-    dispatch(setUserData({ nickname, cookieToken }));
-  } 
+  useEffect(() => {
+    if (data && data.nickname) {
+      const { nickname } = data;
+      Toastfire({ icon: "success", title: `欢迎 ${nickname}` });
+      dispatch(setUserData({ nickname, cookieToken }));
+    }
+  }, [data, dispatch, cookieToken]);
   
   return(
     <>
