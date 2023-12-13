@@ -11,8 +11,12 @@ export const authSlice=createSlice({
 	name:"auth",
   initialState,
   reducers:{
-    
+    setUserData(state,action){
+      const {nickname,cookieToken}=action.payload
+      return  {...state,nickname,token:cookieToken}
+    },
   }
 })
 
+export const {setUserData}=authSlice.actions;
 export default authSlice.reducer; 
