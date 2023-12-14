@@ -17,7 +17,6 @@ export const Input=styled.input`
   line-height:37px;
   color: black;
   background-color:rgba(255,255,255,.95);
-  
 `;
 
 export const Icon=styled.div`

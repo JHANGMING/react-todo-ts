@@ -16,7 +16,7 @@ const ProtectedRoutes=()=>{
   useEffect(() => {
     if (data && data.nickname) {
       const { nickname } = data;
-      Toastfire({ icon: "success", title: `欢迎 ${nickname}` });
+      Toastfire({ icon: "success", title: `歡迎 ${nickname}` });
       dispatch(setUserData({ nickname, cookieToken }));
     }
   }, [data, dispatch, cookieToken]);

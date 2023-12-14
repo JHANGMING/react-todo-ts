@@ -47,5 +47,5 @@ export const {
   useApiSignUpMutation,
   useApiSignInMutation,
   useApiCheckoutQuery,
-  useApiSignOutMutation
+  useApiSignOutMutation,
 } = authApi;
