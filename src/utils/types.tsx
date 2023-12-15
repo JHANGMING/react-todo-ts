@@ -10,8 +10,10 @@ export interface authData{
   token:string,
 }
 
-export interface todoData{
+export interface initialData{
   data:TodoData[];
   filterData:TodoData[]
   tab:string,
+  id:string,
+  content:string
 }

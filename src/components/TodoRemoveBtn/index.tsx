@@ -9,8 +9,7 @@ import { TodoData } from "../../utils/types";
 const TodoRemoveBtn=()=>{
   const [deleteTodo]=useApiDeleteTodosMutation()
   const state=useSelector((state:RootState)=>state)
-  const todoData=state.todo.data
-  const token=state.auth.token
+  const {auth:{token},todo:{data:todoData}}=state
   const delAllItem=()=>{
     const newData=todoData.filter((item:TodoData)=>item.status)
     if (newData.length === 0) {

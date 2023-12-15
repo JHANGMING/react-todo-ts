@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { TodoData, todoData } from "../../utils/types";
+import { TodoData, initialData } from "../../utils/types";
 
 
-const initialState:todoData={
+const initialState:initialData={
     tab:"",
     data:[],
-    filterData:[]
+    filterData:[],
+    id:"",
+    content:""
   }
 
 
@@ -17,8 +19,6 @@ export const todoSlice=createSlice({
       return {...state,tab:action.payload}
     },
     setTodoData(state,action){
-      console.log(action);
-      
       return {...state,data:action.payload}
     },
     setTodofilter(state,action){
@@ -34,8 +34,12 @@ export const todoSlice=createSlice({
       })
       return {...state,filterData:newdata}
     },
+    setEditData(state,action){
+      const {id,content}=action.payload;
+      return {...state,id,content}
+    }
   }
 })
 
-export const {setTodoTab,setTodoData,setTodofilter}=todoSlice.actions;
+export const {setTodoTab,setTodoData,setTodofilter,setEditData}=todoSlice.actions;
 export default todoSlice.reducer; 
