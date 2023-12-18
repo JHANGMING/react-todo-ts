@@ -5,11 +5,11 @@ import LogIn from "./components/LogIn";
 import SignIn from "./components/SignIn";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import Todo from "./pages/Todo";
+import NotFound from "./components/NotFound";
 
 
 
 function App() {
-
   return (
     <>
     <Routes>
@@ -20,7 +20,7 @@ function App() {
       <Route element={<ProtectedRoutes />}>
         <Route path="todo" element={<Todo />}/>
       </Route>
-      {/* <Route path="*" element={<Notfund />}/> */}
+      <Route path="*" element={<NotFound/>}/>
     </Routes>
     </>
 
