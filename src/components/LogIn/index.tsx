@@ -57,8 +57,6 @@ const LogIn=()=>{
               <LogInput key={id} id={id} type={type} labelText={labelText} errors={errors} register={register} rules={rules}/>
             )})
           }
-          {/* <LogInput type="email"  placeholder="Email"/>
-          <LogInput type="password" placeholder="Password"/> */}
           <Buttons>
             {buttonsData.buttons.map((button) => (
               <DefaultButton

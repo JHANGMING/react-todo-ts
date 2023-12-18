@@ -17,10 +17,10 @@ export type InputsConfig = {
   errors?: FieldErrors<FormValues>;
   rules: RegisterOptions; 
 };
+
 export type InputsDataConfig = {
   Inputs: InputsConfig[];
 };
-
 
 
 export const LogInput:React.FC<InputsConfig>=({id,type,labelText,register,rules,errors})=>{

@@ -3,16 +3,16 @@ import React from "react";
 import { NavigateFunction } from "react-router-dom";
 import {  InputsDataConfig } from "../Input";
 
-type ButtonConfig = {
+interface ButtonConfig{
   type: "submit" | "button";
   text: string;
   theme: "createAccount" | "logIn"; 
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-};
+}
 
-type buttonDataConfig = {
+interface buttonDataConfig{
   buttons: ButtonConfig[];
-};
+}
 
 
 interface ErrorData {

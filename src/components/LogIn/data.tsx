@@ -2,16 +2,16 @@ import React from 'react';
 import { NavigateFunction } from 'react-router-dom';
 import { InputsDataConfig } from '../Input';
 
-type ButtonConfig = {
+interface ButtonConfig{
   type: "submit" | "button";
   text: string;
   theme: "login" | "register"; 
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-};
+}
 
-type DataConfig = {
+interface DataConfig{
   buttons: ButtonConfig[];
-};
+}
 
 
 export const getButtonsData = (navigate: NavigateFunction):DataConfig => ({

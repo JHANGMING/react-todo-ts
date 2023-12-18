@@ -4,6 +4,7 @@ export const TodoUl=styled.ul`
   display: flex;
   flex-direction: column;
 `;
+
 export const IconWrapper=styled.div`
   display: none;
   align-items: center;
@@ -70,8 +71,6 @@ export const Checkbox=styled.input`
     display: block;
   } 
 `;
-
-
 
 export const Icon=styled.div`
   color: rgba(70,34,9,.8);

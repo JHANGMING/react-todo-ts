@@ -10,7 +10,6 @@ import { useEffect } from "react";
 import { setEditData, setTodofilter } from "../../redux/slice/todoSlice";
 import TodoEdit from "../TodoEdit";
 
-
 const TodoItem=()=>{
   const dispatch=useDispatch()
   const state=useSelector((state:RootState)=>state)

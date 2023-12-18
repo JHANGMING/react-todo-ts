@@ -7,7 +7,6 @@ export const todoApi = createApi({
     baseUrl: VITE_TODO_API_URL,
   }),
   tagTypes: ['Todos'],
-  
   endpoints: (builder) => ({
     apiGetTodos: builder.query({
       query: (token) => ({

@@ -13,6 +13,3 @@ export const Wrapper=styled.div`
   align-items: center;
   backdrop-filter: blur(3px);
 `;
-
-// fixed top-0 left-0 right-0 bottom-0 bg-black/[.5] z-20 flex justify-center items-center
-// backdropFilter:"blur(3px)"
