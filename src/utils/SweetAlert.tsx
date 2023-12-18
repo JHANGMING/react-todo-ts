@@ -35,7 +35,7 @@ const Toast = Swal.mixin({
 
 export const Toastfire=({icon,title}:ToastConfig)=>{
   Toast.fire({
-    icon: icon,
+    icon,
     title
   })
 }

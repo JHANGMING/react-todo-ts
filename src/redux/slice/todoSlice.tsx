@@ -10,7 +10,6 @@ const initialState:initialData={
     content:""
   }
 
-
 export const todoSlice=createSlice({
 	name:"todo",
   initialState,

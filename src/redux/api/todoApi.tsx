@@ -1,10 +1,10 @@
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
+const { VITE_TODO_API_URL } = import.meta.env;
 export const todoApi = createApi({
   reducerPath: "postsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `https://todolist-api.hexschool.io`,
+    baseUrl: VITE_TODO_API_URL,
   }),
   tagTypes: ['Todos'],
   

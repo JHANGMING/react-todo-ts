@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
+const { VITE_TODO_API_URL } = import.meta.env;
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `https://todolist-api.hexschool.io`,
+    baseUrl: VITE_TODO_API_URL,
   }),
   
   endpoints: (builder) => ({

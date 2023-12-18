@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { Swalfire, Toastfire } from "../../utils/SweetAlert";
 import { useApiSignUpMutation } from "../../redux/api/authApi";
 
-const SignIn=()=>{
+const SignIn=()=>{  
   const navigate=useNavigate()
   const buttonsData = getButtonsData(navigate);
   const inputsData=getInputsData()

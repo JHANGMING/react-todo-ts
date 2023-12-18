@@ -52,13 +52,13 @@ const TodoItem=()=>{
       {filterData.map((item:TodoData)=>{
         const{id,status,content}=item
         return(
-          <>
+          <div key={id}>
           {id!==editId?(
-            <TodoLi className=" px-8 mb-4 text-black">
-              <ListItem key={id}>
+            <TodoLi>
+              <ListItem >
                 <Label htmlFor={id} onClick={()=>checkboxHandler(id)}>
-                  <Checkbox type="checkbox" id={id} checked={status}/>
-                  <span className="context px-6" >{content}</span>
+                  <Checkbox type="checkbox" id={id} checked={status} readOnly/>
+                  <span>{content}</span>
                 </Label>
                 <IconWrapper>
                   <Icon>
@@ -73,7 +73,7 @@ const TodoItem=()=>{
           ):(
             <TodoEdit/>
           )}
-          </>
+          </div>
         )
       })}
     </TodoUl>

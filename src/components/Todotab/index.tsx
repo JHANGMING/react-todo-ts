@@ -10,6 +10,7 @@ export const Todotab=()=>{
   useEffect(()=>{
     dispatch(setTodoTab(tab))
   },[tab])
+  
   return(
     <Wrapper>
       <TabUl>
