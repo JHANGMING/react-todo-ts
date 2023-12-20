@@ -1,8 +1,7 @@
-
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 const { VITE_TODO_API_URL } = import.meta.env;
 export const todoApi = createApi({
-  reducerPath: "postsApi",
+  reducerPath: 'postsApi',
   baseQuery: fetchBaseQuery({
     baseUrl: VITE_TODO_API_URL,
   }),
@@ -12,8 +11,8 @@ export const todoApi = createApi({
       query: (token) => ({
         url: '/todos/',
         headers: {
-        Authorization: token, 
-      },
+          Authorization: token,
+        },
       }),
       providesTags: ['Todos'],
     }),
@@ -52,7 +51,7 @@ export const todoApi = createApi({
       query: ({ id, text, token }) => ({
         url: `/todos/${id}`,
         method: 'PUT',
-        body: {"content":text},
+        body: { content: text },
         headers: {
           Authorization: token,
         },
@@ -62,7 +61,7 @@ export const todoApi = createApi({
   }),
 });
 
-export const { 
+export const {
   useApiGetTodosQuery,
   useApiPostTodosMutation,
   useApiDeleteTodosMutation,

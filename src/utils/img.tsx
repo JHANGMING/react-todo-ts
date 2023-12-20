@@ -1,3 +1,3 @@
-import ImguserPhoto from "../assets/brown.jpeg"
+import ImguserPhoto from '../assets/brown.jpeg';
 
-export {ImguserPhoto}
+export { ImguserPhoto };

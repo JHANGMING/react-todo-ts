@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Wrapper=styled.div`
+export const Wrapper = styled.div`
   text-align: center;
-  color: rgba(70,34,9,.8);
+  color: rgba(70, 34, 9, 0.8);
   margin-bottom: 9px;
 `;
